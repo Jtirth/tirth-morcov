@@ -1,0 +1,40 @@
+Predictive Text and Next-Word Predictor Using Markov Chains
+
+ABSTRACT
+This project builds an interactive educational application that predicts a next word from observed word-transition frequencies. A Flask backend calculates first-order and second-order conditional probabilities from a clearly documented demonstration corpus. A separate test file supports held-out evaluation. Predictions and statistics are inspectable; no paid services or neural language models are used.
+
+INTRODUCTION AND PROBLEM STATEMENT
+Predictive text is familiar to users, but modern systems often hide how predictions are obtained. This project demonstrates a simpler statistical approach: use a finite context, count the words that followed it in training text, and normalize those counts into a probability distribution. The central question is how model order affects the available contexts and observed next-word probabilities.
+
+OBJECTIVES
+Implement a functioning first- and second-order Markov predictor; explain frequency and conditional probability; expose corpus statistics and visualizations; allow temporary custom training; and evaluate predictions on separate held-out text while reporting coverage.
+
+BACKGROUND
+A Markov chain models transitions between states. In text, a state may be a word or a sequence of words. A first-order model uses the immediately preceding token. A second-order model conditions on the preceding pair. These simple models are interpretable but do not capture broad semantics or long-distance language structure.
+
+MATHEMATICAL FOUNDATION
+For event B after context A: P(B|A)=Count(A followed by B)/Count(A). For first order, P(w_t|w_(t-1))=Count(w_(t-1),w_t)/Count(w_(t-1)). For second order, P(w_t|w_(t-2),w_(t-1))=Count(w_(t-2),w_(t-1),w_t)/Count(w_(t-2),w_(t-1)). Counts are frequencies; division produces relative frequency. For the complete set of observed outcomes following one context, these conditional probabilities sum to 1.
+
+METHODOLOGY AND DATA PROCESSING
+The tokenizer extracts alphanumeric words, allows simple apostrophe contractions, lowercases tokens, and treats punctuation as a boundary. Adjacent tokens build unigram, first-order, and second-order counters. Training and test corpora are separate. The demonstration text is original, small, and pattern-rich for classroom clarity; it is not a representative sample of English. Custom training is temporary server memory only.
+
+SYSTEM ARCHITECTURE AND ALGORITHM
+The browser requests JSON from Flask. Flask reads the current training text, instantiates a frequency-count model, and returns contexts, observation counts, ranked candidate words, and normalized probabilities. Dashboard summaries are computed from those counters. For held-out evaluation, each test token is predicted from its preceding one or two tokens. Coverage is the number of test contexts found in training divided by all evaluable test cases. Top-1 and top-3 accuracies are calculated only over covered cases and presented beside coverage.
+
+RESULTS
+The live application calculates corpus totals, unique vocabulary, top words, transition tables, prediction distributions, and measured test metrics from the included files. Numeric values are intentionally generated from the data by the application rather than frozen into the report. Insert a fresh screenshot and copy the exact live metric output into a final classroom submission if required. Never represent this synthetic teaching corpus as real-world language data.
+
+LIMITATIONS AND FUTURE SCOPE
+The corpus is small and designed to yield visible repeated patterns. The tokenizer is intentionally simple. Sparse contexts may have no prediction. Higher order produces more specific but less frequently observed contexts. The model has no semantic understanding or smoothing, and the in-memory custom corpus is not persistent. Future work can add larger permitted corpora, user-controlled smoothing, n-gram export, and detailed reproducibility tools while keeping held-out data separate.
+
+CONCLUSION
+NextWord Lab links a working prediction interface to transparent frequency counts and conditional probability. It presents the strengths and limitations of first- and second-order Markov models, makes the train/test separation visible, and supports reproducible classroom exploration.
+
+REFERENCES
+1. Norris, J. R. (1997). Markov Chains. Cambridge University Press.
+2. Manning, C. D., Raghavan, P., & Schütze, H. (2008). Introduction to Information Retrieval. Cambridge University Press. Chapter 1, Boolean retrieval and term statistics.
+3. Jurafsky, D., & Martin, J. H. Speech and Language Processing (3rd ed. draft), chapters on n-gram language models. Stanford University. Use the current publicly available draft and cite the accessed edition/date for final submission.
+4. The included original demonstration corpus, training.txt and testing.txt, is project-created illustrative material and not an external research dataset.
+
+TEAM CONTRIBUTIONS
+Student 1: theory/formula review; Student 2: corpus and statistical analysis; Student 3: Flask backend and Markov implementation; Student 4: UI and charts; Student 5: testing, GitHub coordination, documentation, and presentation. Add names and institution details before submission.

@@ -1,0 +1,56 @@
+I love learning about probability and statistics.
+I love learning about data and patterns.
+I love studying probability through simple examples.
+I love exploring how words connect in language.
+The student studies probability and records every observation.
+The student studies statistics and compares each result.
+The student learns from data and builds a clear model.
+The student writes a short report about the experiment.
+A Markov chain predicts the next word from recent context.
+A Markov chain uses transition counts from training text.
+A Markov chain describes states and transition probabilities.
+A first order model uses the previous word as context.
+A second order model uses the previous two words as context.
+The model counts how often one word follows another word.
+The model calculates probability from observed frequency.
+The model displays the most likely next word.
+The model explains each prediction with a count.
+The probability of an event is its frequency divided by total observations.
+Conditional probability measures an event when a context is known.
+The conditional probability of a word is its count divided by context count.
+Data becomes useful when we organize and analyze it.
+Data helps students discover repeated patterns in text.
+Patterns in language can be measured with word frequencies.
+Patterns appear when the same context occurs many times.
+Words form a sequence, and each transition has a count.
+Words in a sentence create context for a prediction.
+When the context is I love, the next word can be learning.
+When the context is the student, the next word can be studies.
+When the context is a Markov, the next word can be chain.
+When the context is conditional probability, the next word can be measures.
+Probability values for observed outcomes add up to one.
+A probability distribution shows possible outcomes and their chances.
+A frequency is a count, while probability is a normalized proportion.
+The dashboard shows word counts and transition distributions.
+The dashboard presents results using a chart and a table.
+The chart compares observed word frequency across the corpus.
+A training set teaches the model about word transitions.
+A test set evaluates predictions on held out text.
+The test set is kept separate from model training.
+Accuracy is calculated from correct predictions on test cases.
+Coverage measures how many test contexts were observed in training.
+Top one accuracy checks the most likely prediction.
+Top three accuracy checks whether the true word is among three predictions.
+Students can paste text and train a temporary custom corpus.
+Custom training updates frequencies for this server session.
+The sample corpus is written for demonstration and is not real world language data.
+The application uses transparent statistical counts instead of neural networks.
+A larger corpus can improve context coverage but does not guarantee accuracy.
+We inspect every calculation and report limitations honestly.
+The experiment compares first order and second order models.
+The first order chain remembers one previous state.
+The second order chain remembers two previous states.
+The transition matrix stores the conditional probability of each next state.
+For the context I love, learning appears three times in this small example.
+For the context I love, probability uses count learning divided by total context count.
+This example helps explain conditional probability without hidden parameters.

@@ -1,0 +1,10 @@
+I love learning about language.
+The student studies probability and builds a model.
+A Markov chain predicts the next word from context.
+The model calculates probability from frequency.
+Words form a sequence, and each transition has a probability.
+The dashboard shows frequency and probability.
+A training set teaches the model about patterns.
+The test set evaluates predictions on held out text.
+Students can paste text and train a temporary model.
+Conditional probability measures an event when context is known.

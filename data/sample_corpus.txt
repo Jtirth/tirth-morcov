@@ -1,0 +1,5 @@
+NextWord Lab demonstration corpus
+
+This corpus is original demonstration text assembled to create repeated, interpretable sentence patterns for classroom exercises. It is not a representative sample of everyday English, and no claim about real-world language performance should be inferred from it.
+
+The training and test files are separated to support a simple held-out evaluation. The model lowercases tokens, treats punctuation as token boundaries, and counts adjacent word transitions.
